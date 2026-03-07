@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teja Priyan | Developer Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  transition: 0.4s;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+}
+</style>
+
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+<nav class="flex justify-between p-6 max-w-6xl mx-auto">
+  <h1 class="text-xl font-bold text-cyan-400">Teja Priyan</h1>
+  <div class="space-x-6">
+    <a href="#about" class="hover:text-cyan-300 transition">About</a>
+    <a href="#skills" class="hover:text-cyan-300 transition">Skills</a>
+    <a href="#projects" class="hover:text-cyan-300 transition">Projects</a>
+    <a href="#contact" class="hover:text-cyan-300 transition">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="text-center mt-32 px-6">
+  <h1 class="text-5xl font-bold mb-6">
+    Hi, I'm <span class="text-cyan-400">Teja Priyan</span>
+  </h1>
+  <h2 class="text-2xl text-gray-400 mb-6">
+    <span id="typing"></span>
+  </h2>
+  <p class="max-w-xl mx-auto text-gray-400">
+    Computer Science student passionate about building AI systems and modern web applications.
+  </p>
+  <button class="mt-8 bg-cyan-400 text-black px-6 py-3 rounded-xl hover:scale-105 transition">
+    Download Resume
+  </button>
+</section>
+
+<!-- TERMINAL INTRO -->
+<section class="max-w-4xl mx-auto mt-32 px-6">
+  <div class="glass p-8 font-mono">
+    <p>> Initializing developer profile...</p>
+    <p>> Loading projects...</p>
+    <p>> Skills loaded successfully</p>
+    <p>> Welcome to Teja Priyan's portfolio</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-5xl mx-auto mt-32 px-6">
+  <h2 class="text-3xl font-bold text-cyan-400 mb-6">About Me</h2>
+  <div class="glass p-8">
+    <p class="text-gray-400 leading-7">
+      I am a final-year Computer Science student passionate about software development and artificial intelligence.  
+      My focus is on building intelligent systems, such as helmet detection and smart traffic monitoring using computer vision.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="max-w-5xl mx-auto mt-32 px-6">
+  <h2 class="text-3xl font-bold text-cyan-400 mb-10">Skills</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="glass p-6 text-center hover:scale-105 transition">HTML</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">SQL</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">GitHub</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">Excel</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">Web Development</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">Computer Vision</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">AI Basics</div>
+    <div class="glass p-6 text-center hover:scale-105 transition">Problem Solving</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="max-w-6xl mx-auto mt-32 px-6">
+  <h2 class="text-3xl font-bold text-cyan-400 mb-10">Projects</h2>
+  <div class="grid md:grid-cols-2 gap-10">
+    <div class="glass p-8 project">
+      <h3 class="text-xl font-semibold mb-3">Helmet Detection System</h3>
+      <p class="text-gray-400">AI-based system that detects riders without helmets using computer vision.</p>
+    </div>
+    <div class="glass p-8 project">
+      <h3 class="text-xl font-semibold mb-3">Smart Traffic Monitoring</h3>
+      <p class="text-gray-400">AI and IoT system for analyzing traffic flow and detecting violations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-5xl mx-auto mt-32 px-6 text-center">
+  <h2 class="text-3xl font-bold text-cyan-400 mb-6">Contact</h2>
+  <p class="text-gray-400 mb-4"><i class="fas fa-envelope text-cyan-400"></i> teja1616150@gmail.com</p>
+  <p class="text-gray-400 mb-4"><i class="fab fa-github text-cyan-400"></i> github.com/Tejapriyan</p>
+  <p class="text-gray-400"><i class="fab fa-linkedin text-cyan-400"></i> linkedin.com/in/yourlinkedin</p>
+</section>
+
+<footer class="text-center mt-32 mb-10 text-gray-500">
+  © 2026 Teja Priyan
+</footer>
+
+<script>
+new Typed("#typing", {
+  strings: ["Web Developer", "AI Enthusiast", "Computer Science Engineer"],
+  typeSpeed: 60,
+  backSpeed: 40,
+  loop: true
+})
+
+ScrollReveal().reveal('section', {
+  distance: '60px',
+  duration: 1200,
+  origin: 'bottom',
+  interval: 200
+})
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true },
+    color: { value: "#22d3ee" }
+  }
+})
+</script>
+
+</body>
+</html>
