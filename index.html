@@ -14,6 +14,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <style>
+    /* ── THEME VARIABLES ── */
+    :root {
+      --accent: #22d3ee;
+      --accent-dark: #06b6d4;
+      --accent-rgb: 34, 211, 238;
+      --bg: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1a1a2e 100%);
+      --particle-color: #22d3ee;
+      --timeline-dot: #020617;
+    }
+
+    body.theme-purple {
+      --accent: #a855f7;
+      --accent-dark: #9333ea;
+      --accent-rgb: 168, 85, 247;
+      --bg: linear-gradient(135deg, #0d0118 0%, #1a0533 50%, #2d1b4e 100%);
+      --particle-color: #a855f7;
+      --timeline-dot: #0d0118;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -26,9 +45,10 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1a1a2e 100%);
+      background: var(--bg);
       color: white;
       overflow-x: hidden;
+      transition: background 0.5s ease;
     }
 
     #particles-js {
@@ -41,19 +61,19 @@
     .glass {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(34, 211, 238, 0.2);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
       border-radius: 15px;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #22d3ee, #06b6d4);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .glow {
-      box-shadow: 0 0 30px rgba(34, 211, 238, 0.3), inset 0 0 30px rgba(34, 211, 238, 0.1);
+      box-shadow: 0 0 30px rgba(var(--accent-rgb), 0.3), inset 0 0 30px rgba(var(--accent-rgb), 0.1);
     }
 
     .card-hover {
@@ -63,7 +83,7 @@
 
     .card-hover:hover {
       transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(34, 211, 238, 0.4);
+      box-shadow: 0 20px 60px rgba(var(--accent-rgb), 0.4);
     }
 
     button {
@@ -89,7 +109,7 @@
 
     button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(34, 211, 238, 0.7);
+      box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.7);
     }
 
     .nav-link {
@@ -104,7 +124,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #22d3ee;
+      background: var(--accent);
       transition: width 0.3s ease;
     }
 
@@ -116,16 +136,16 @@
       display: inline-block;
       padding: 8px 16px;
       border-radius: 20px;
-      background: rgba(34, 211, 238, 0.1);
-      border: 1px solid rgba(34, 211, 238, 0.4);
+      background: rgba(var(--accent-rgb), 0.1);
+      border: 1px solid rgba(var(--accent-rgb), 0.4);
       transition: all 0.3s ease;
       animation: float 3s ease-in-out infinite;
     }
 
     .skill-badge:hover {
-      background: rgba(34, 211, 238, 0.3);
+      background: rgba(var(--accent-rgb), 0.3);
       transform: scale(1.1) translateY(-5px);
-      border-color: rgba(34, 211, 238, 0.8);
+      border-color: rgba(var(--accent-rgb), 0.8);
     }
 
     @keyframes float {
@@ -147,7 +167,7 @@
     .project-tag {
       display: inline-block;
       padding: 4px 12px;
-      background: rgba(34, 211, 238, 0.2);
+      background: rgba(var(--accent-rgb), 0.2);
       border-radius: 12px;
       font-size: 0.85rem;
       margin: 4px 4px 4px 0;
@@ -156,7 +176,7 @@
     .stat-counter {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #22d3ee;
+      color: var(--accent);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -180,9 +200,9 @@
       top: 0;
       width: 12px;
       height: 12px;
-      background: #22d3ee;
+      background: var(--accent);
       border-radius: 50%;
-      border: 3px solid #020617;
+      border: 3px solid var(--timeline-dot);
     }
 
     .timeline-item::after {
@@ -192,7 +212,7 @@
       top: 20px;
       width: 3px;
       height: calc(100% + 20px);
-      background: rgba(34, 211, 238, 0.3);
+      background: rgba(var(--accent-rgb), 0.3);
     }
 
     .timeline-item:last-child::after {
@@ -237,7 +257,7 @@
 
     .modal-content {
       background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
-      border: 1px solid rgba(34, 211, 238, 0.3);
+      border: 1px solid rgba(var(--accent-rgb), 0.3);
       border-radius: 20px;
       width: 95%;
       max-width: 900px;
@@ -265,21 +285,21 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      border-bottom: 1px solid rgba(34, 211, 238, 0.2);
-      background: rgba(34, 211, 238, 0.05);
+      border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
+      background: rgba(var(--accent-rgb), 0.05);
       flex-shrink: 0;
     }
 
     .modal-header h2 {
       margin: 0;
-      color: #22d3ee;
+      color: var(--accent);
       font-size: 1.5rem;
     }
 
     .close-btn {
       background: none;
       border: none;
-      color: #22d3ee;
+      color: var(--accent);
       font-size: 2rem;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -293,7 +313,7 @@
 
     .close-btn:hover {
       transform: rotate(90deg) scale(1.1);
-      color: #06b6d4;
+      color: var(--accent-dark);
     }
 
     .modal-body {
@@ -315,16 +335,16 @@
       align-items: center;
       gap: 10px;
       padding: 15px;
-      background: rgba(34, 211, 238, 0.05);
-      border-top: 1px solid rgba(34, 211, 238, 0.2);
+      background: rgba(var(--accent-rgb), 0.05);
+      border-top: 1px solid rgba(var(--accent-rgb), 0.2);
       flex-shrink: 0;
     }
 
     .pdf-controls button {
       padding: 8px 12px;
-      background: rgba(34, 211, 238, 0.2);
-      border: 1px solid rgba(34, 211, 238, 0.5);
-      color: #22d3ee;
+      background: rgba(var(--accent-rgb), 0.2);
+      border: 1px solid rgba(var(--accent-rgb), 0.5);
+      color: var(--accent);
       border-radius: 8px;
       font-size: 0.9rem;
       cursor: pointer;
@@ -332,12 +352,12 @@
     }
 
     .pdf-controls button:hover {
-      background: rgba(34, 211, 238, 0.4);
-      border-color: #22d3ee;
+      background: rgba(var(--accent-rgb), 0.4);
+      border-color: var(--accent);
     }
 
     .pdf-page-info {
-      color: #22d3ee;
+      color: var(--accent);
       font-size: 0.9rem;
       min-width: 100px;
       text-align: center;
@@ -427,16 +447,74 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: rgba(34, 211, 238, 0.1);
+      background: rgba(var(--accent-rgb), 0.1);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(34, 211, 238, 0.4);
+      background: rgba(var(--accent-rgb), 0.4);
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(34, 211, 238, 0.6);
+      background: rgba(var(--accent-rgb), 0.6);
+    }
+
+    /* ── THEME TOGGLE BUTTON ── */
+    .theme-toggle {
+      position: relative;
+      width: 64px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid rgba(var(--accent-rgb), 0.5);
+      background: rgba(var(--accent-rgb), 0.1);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      padding: 3px;
+    }
+
+    .theme-toggle::before {
+      display: none;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.5);
+      transform: scale(1.05);
+    }
+
+    .toggle-knob {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), background 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.8);
+      flex-shrink: 0;
+    }
+
+    body.theme-purple .toggle-knob {
+      transform: translateX(32px);
+    }
+
+    .toggle-label {
+      position: absolute;
+      right: 5px;
+      font-size: 10px;
+      color: rgba(var(--accent-rgb), 0.7);
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    body.theme-purple .toggle-label {
+      left: 5px;
+      right: auto;
     }
   </style>
 </head>
@@ -446,14 +524,25 @@
   <!-- NAVBAR -->
   <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-gradient-to-b from-[rgba(2,6,23,0.9)] to-transparent backdrop-blur-md">
     <h1 class="text-2xl font-bold gradient-text">Teja Priyan</h1>
-    <div class="hidden md:flex space-x-8">
+    <div class="hidden md:flex space-x-8 items-center">
       <a href="#about" class="nav-link hover:text-cyan-300 transition">About</a>
       <a href="#experience" class="nav-link hover:text-cyan-300 transition">Experience</a>
       <a href="#skills" class="nav-link hover:text-cyan-300 transition">Skills</a>
       <a href="#projects" class="nav-link hover:text-cyan-300 transition">Projects</a>
       <a href="#contact" class="nav-link hover:text-cyan-300 transition">Contact</a>
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" onclick="toggleTheme()" title="Switch theme" aria-label="Toggle color theme">
+        <div class="toggle-knob" id="toggleKnob">🌊</div>
+        <span class="toggle-label" id="toggleLabel">✦</span>
+      </button>
     </div>
-    <button class="md:hidden text-cyan-400"><i class="fas fa-bars text-2xl"></i></button>
+    <div class="flex items-center gap-3 md:hidden">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Switch theme" aria-label="Toggle color theme">
+        <div class="toggle-knob" id="toggleKnobMobile">🌊</div>
+        <span class="toggle-label">✦</span>
+      </button>
+      <button class="text-cyan-400"><i class="fas fa-bars text-2xl"></i></button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -511,10 +600,10 @@
       <div class="glass p-8 card-hover">
         <h3 class="text-2xl font-semibold text-cyan-400 mb-4"><i class="fas fa-user-graduate mr-3"></i>Education & Background</h3>
         <p class="text-gray-400 leading-7 mb-4">
-          Computer Science graduate with a strong foundation in software development principles and algorithms. Completed an intensive 6-month Java Full Stack Developer training program, gaining hands-on experience in enterprise-level web application development.
+          <strong class="text-cyan-300">Passionate about Computer Vision and AI systems.</strong> Completed a Computer Science degree in <strong class="text-cyan-300">May 2025</strong> and a 6-month Java Full Stack Developer training program in <strong class="text-cyan-300">2025–2026</strong>, gaining hands-on experience in enterprise-level web application development.
         </p>
         <p class="text-gray-400 leading-7">
-          My passion lies at the intersection of artificial intelligence, computer vision, and full-stack development. I've successfully implemented intelligent systems including helmet detection, traffic monitoring, and IoT solutions.
+          Currently building modern web applications and improving full stack and AI skills while actively seeking job opportunities. I've implemented intelligent systems including helmet detection, number plate recognition, and traffic monitoring.
         </p>
       </div>
 
@@ -548,28 +637,29 @@
     
     <div class="max-w-3xl mx-auto">
       <div class="timeline-item">
-        <h3 class="text-xl font-semibold text-cyan-400">Java Full Stack Developer Training</h3>
-        <p class="text-gray-400">Professional Training Program | 6 Months (2025-2026)</p>
+        <h3 class="text-xl font-semibold text-cyan-400">AI & Computer Vision Projects</h3>
+        <p class="text-gray-400">Academic & Personal Projects | 2023</p>
         <p class="text-gray-500 mt-2">
-          Completed comprehensive training in enterprise Java development, Spring Boot architecture, database design, and modern web application development practices.
+          Built AI-based systems like helmet detection, number plate recognition, and traffic monitoring using Python, OpenCV, and deep learning models.
         </p>
       </div>
 
       <div class="timeline-item">
         <h3 class="text-xl font-semibold text-cyan-400">Computer Science Degree</h3>
-        <p class="text-gray-400">University Graduation | 2025</p>
+        <p class="text-gray-400">University Graduation | Completed May 2025</p>
         <p class="text-gray-500 mt-2">
-          Graduated with strong foundation in algorithms, data structures, software engineering principles, and computer architecture.
+          Graduated with a strong foundation in algorithms, data structures, software engineering principles, and computer architecture.
         </p>
       </div>
 
       <div class="timeline-item">
-        <h3 class="text-xl font-semibold text-cyan-400">AI & Computer Vision Projects</h3>
-        <p class="text-gray-400">Academic & Personal Projects | 2023-Present</p>
+        <h3 class="text-xl font-semibold text-cyan-400">Java Full Stack Developer Training</h3>
+        <p class="text-gray-400">Professional Training Program | September 2025 · 6 Months</p>
         <p class="text-gray-500 mt-2">
-          Developed multiple AI-driven systems including helmet detection, traffic monitoring, and real-time vision processing applications.
+          Completed comprehensive training in enterprise Java development, Spring Boot architecture, database design, and modern web application development practices.
         </p>
       </div>
+
     </div>
   </section>
 
@@ -711,7 +801,7 @@
         <div class="relative z-10">
           <div class="flex items-center gap-2 mb-4">
             <i class="fas fa-hotel text-2xl text-cyan-400"></i>
-            <h3 class="text-2xl font-semibold">Hotel Booking Platform</h3>
+            <h3 class="text-2xl font-semibold">Hotel Booking Website</h3>
           </div>
           
           <p class="text-gray-400 mb-4 leading-7">
@@ -729,35 +819,99 @@
             <button class="text-cyan-400 hover:text-cyan-300 transition flex items-center gap-2">
               <i class="fas fa-github"></i> Code
             </button>
-            <button class="text-cyan-400 hover:text-cyan-300 transition flex items-center gap-2">
+            <button onclick="window.open('https://veltechhotel.onrender.com/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2">
               <i class="fas fa-external-link-alt"></i> Live
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Project 4 - Additional -->
+      <!-- Project 4 - Gaming Hub -->
       <div class="glass p-8 card-hover group overflow-hidden rounded-2xl relative">
         <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
         
         <div class="relative z-10">
           <div class="flex items-center gap-2 mb-4">
-            <i class="fas fa-flask text-2xl text-cyan-400"></i>
-            <h3 class="text-2xl font-semibold">Open for New Projects</h3>
+            <i class="fas fa-gamepad text-2xl text-cyan-400"></i>
+            <h3 class="text-2xl font-semibold">Gaming Hub Platform</h3>
           </div>
           
           <p class="text-gray-400 mb-4 leading-7">
-            I'm actively looking for exciting opportunities to collaborate on innovative projects. Whether it's AI/ML applications, full-stack development, or computer vision solutions, I'm ready to contribute.
+            Collection of interactive games and web-based gaming experiences. A fun, engaging platform showcasing frontend creativity and interactive UI design.
           </p>
           
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="project-tag">Always Learning</span>
-            <span class="project-tag">Open to Opportunities</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">Interactive UI</span>
           </div>
           
-          <button class="bg-cyan-400 text-black px-6 py-2 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2">
-            <i class="fas fa-envelope"></i> Get in Touch
-          </button>
+          <div class="flex gap-3">
+            <button onclick="window.open('https://tejagamehub.netlify.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 - Personal Web App -->
+      <div class="glass p-8 card-hover group overflow-hidden rounded-2xl relative">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-spa text-2xl text-cyan-400"></i>
+            <h3 class="text-2xl font-semibold">Glass‑Tech Sanctuary</h3>
+          </div>
+          
+          <p class="text-gray-400 mb-4 leading-7">
+            A serene, glass‑inspired personal portfolio & gaming hub. Explore Mind & Skill Suite games, medical & anatomy trivia, and clean code snippets — all wrapped in a minimalist, soothing aesthetic.
+          </p>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Game Design</span>
+            <span class="project-tag">Interactive</span>
+            <span class="project-tag">Glassmorphism</span>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="window.open('https://myself-tejapriyan.onrender.com/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 - 3D Portfolio -->
+      <div class="glass p-8 card-hover group overflow-hidden rounded-2xl relative md:col-span-2">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-cube text-2xl text-cyan-400"></i>
+            <h3 class="text-2xl font-semibold">3D Scroll Portfolio Experience</h3>
+            <span class="ml-2 text-xs bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 px-2 py-0.5 rounded-full">Coming Soon</span>
+          </div>
+          
+          <p class="text-gray-400 mb-4 leading-7">
+            Immersive scroll-based 3D storytelling portfolio — an Apple-style experience where each scroll reveals a new chapter of the story through cinematic 3D animations and transitions.
+          </p>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="project-tag">Three.js</span>
+            <span class="project-tag">WebGL</span>
+            <span class="project-tag">GSAP</span>
+            <span class="project-tag">Scroll Animation</span>
+            <span class="project-tag">3D Design</span>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="alert('Coming Soon — stay tuned! 🚀')" class="bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2">
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -849,7 +1003,7 @@
             
             <div class="resume-item">
               <div class="resume-item-title">Java Full Stack Developer Training</div>
-              <div class="resume-item-subtitle">Professional Training Institute | 6 Months (Jan 2025 - Jun 2026)</div>
+              <div class="resume-item-subtitle">Professional Training Institute | 6 Months (Sep 2025 - Mar 2026)</div>
               <div class="resume-item-description">
                 <ul>
                   <li>Mastered enterprise-level Java development and Spring Boot framework</li>
@@ -903,7 +1057,7 @@
             <div class="resume-section-title">EDUCATION</div>
             <div class="resume-item">
               <div class="resume-item-title">Bachelor of Computer Science</div>
-              <div class="resume-item-subtitle">University Graduation | 2024</div>
+              <div class="resume-item-subtitle">University Graduation | Completed May 2025</div>
               <div class="resume-item-description">
                 Strong academic foundation in algorithms, data structures, software engineering, and computer architecture. GPA: 8.5/10
               </div>
@@ -954,12 +1108,83 @@
   </footer>
 
   <script>
+    // ── THEME TOGGLE ──
+    let isPurple = false;
+
+    function toggleTheme() {
+      isPurple = !isPurple;
+      document.body.classList.toggle('theme-purple', isPurple);
+
+      const knob = document.getElementById('toggleKnob');
+      const knobMobile = document.getElementById('toggleKnobMobile');
+      const emoji = isPurple ? '🔮' : '🌊';
+      if (knob) knob.textContent = emoji;
+      if (knobMobile) knobMobile.textContent = emoji;
+
+      // Re-init particles with new color
+      const color = isPurple ? '#a855f7' : '#22d3ee';
+      if (window.pJSDom && window.pJSDom.length > 0) {
+        window.pJSDom[0].pJS.fn.vendors.destroypJS();
+        window.pJSDom = [];
+      }
+      initParticles(color);
+
+      // Save preference
+      localStorage.setItem('theme', isPurple ? 'purple' : 'cyan');
+    }
+
+    function initParticles(color) {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60, density: { enable: true, value_area: 800 } },
+          color: { value: color },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: 0.2 },
+          size: { value: 3, random: 2 },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: color,
+            opacity: 0.4,
+            width: 1
+          },
+          move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "repulse" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 200, line_linked: { opacity: 1 } },
+            repulse: { distance: 400 }
+          }
+        },
+        retina_detect: true
+      });
+    }
+
+    // Restore saved theme
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'purple') {
+        isPurple = true;
+        document.body.classList.add('theme-purple');
+        const knob = document.getElementById('toggleKnob');
+        const knobMobile = document.getElementById('toggleKnobMobile');
+        if (knob) knob.textContent = '🔮';
+        if (knobMobile) knobMobile.textContent = '🔮';
+      }
+    })();
+
     // Typed.js initialization
     new Typed("#typing", {
       strings: [
+        "Computer Vision Developer",
         "Full Stack Developer",
         "AI Enthusiast",
-        "Computer Vision Specialist",
         "Problem Solver",
         "Java Developer"
       ],
@@ -1007,37 +1232,8 @@
       });
     });
 
-    // Particles.js configuration
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60, density: { enable: true, value_area: 800 } },
-        color: { value: "#22d3ee" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: 0.2 },
-        size: { value: 3, random: 2 },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#22d3ee",
-          opacity: 0.4,
-          width: 1
-        },
-        move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "grab" },
-          onclick: { enable: true, mode: "repulse" },
-          resize: true
-        },
-        modes: {
-          grab: { distance: 200, line_linked: { opacity: 1 } },
-          repulse: { distance: 400 }
-        }
-      },
-      retina_detect: true
-    });
+    // Particles.js — init with saved or default theme color
+    initParticles(isPurple ? '#a855f7' : '#22d3ee');
 
     // Resume Modal Functions
     function openResumeModal() {
