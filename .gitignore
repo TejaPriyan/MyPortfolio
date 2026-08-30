@@ -1,0 +1,42 @@
+# ── Operating system files ──
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# ── Editors & IDEs ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# ── Node (only relevant if you add local tooling) ──
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Build output (if a build step is ever added) ──
+dist/
+build/
+out/
+
+# ── Environment & secrets ──
+.env
+.env.*
+!.env.example
+
+# ── Tooling caches ──
+.cache/
+.vercel/
+coverage/
+
+# ── Logs ──
+*.log
