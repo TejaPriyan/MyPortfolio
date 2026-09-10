@@ -14,7 +14,7 @@
 
 ## 📖 About the Website
 
-This is the personal developer portfolio website of **Teja Priyan**, an AI Engineer and Full Stack Developer. It serves as a central hub showcasing projects, technical skills, background, and resume.
+This is the personal developer portfolio website  **Teja Priyan**, of me AI Engineer and Full Stack Developer. It serves as a central hub showcasing projects, technical skills, background, and resume.
 
 The site is built as a lightweight, zero-build single-page web application featuring a modern glassmorphic design, smooth animations, and an interactive particle background.
 
