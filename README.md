@@ -39,6 +39,7 @@ Here is an overview of the files in my repository and what each one does:
 MyPortfolio/
 ├── index.html                   # Main website file containing all HTML markup, CSS styling, and JavaScript
 ├── google87bb3bc53ec346d2.html  # Google Search Console verification file
+├── BingSiteAuth.xml             # Bing Webmaster Tools verification file
 ├── assets/
 │   └── banner.jpg               # Banner image used in this README
 ├── .github/
