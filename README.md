@@ -1,4 +1,4 @@
-<h1 align="center">Teja Priyan — Portfolio Website</h1>
+<h1 align="center">Hi, I'm Teja Priyan 👋</h1>
 
 <p align="center">
   <img src="assets/banner.jpg" alt="Teja Priyan — Portfolio Website banner" width="100%">
@@ -12,35 +12,35 @@
 
 ---
 
-## 📖 About the Website
+## 👨‍💻 About My Portfolio
 
-This is the personal developer portfolio website  **Teja Priyan**, of me AI Engineer and Full Stack Developer. It serves as a central hub showcasing projects, technical skills, background, and resume.
+Welcome to my personal developer portfolio website! I am **Teja Priyan**, an AI Engineer and Full Stack Developer. I created this website to showcase my AI projects, web applications, technical skills, background, and resume in one place.
 
-The site is built as a lightweight, zero-build single-page web application featuring a modern glassmorphic design, smooth animations, and an interactive particle background.
-
----
-
-## ✨ Features
-
-- 🌗 **Dual Theme Switcher** — Toggle between Ocean (cyan) and Amethyst (purple) themes, saved in local storage.
-- 🏷️ **Project Category Filters** — Easily filter projects by category: **All**, **AI & LLMs**, **Computer Vision**, and **Web & 3D Apps**.
-- ✨ **Interactive Animations** — Particle background that reacts to mouse movements, smooth scrolling, and dynamic typing role headlines.
-- 📄 **In-Page Resume Modal** — View the full resume directly on the page with options to print or download as HTML.
-- 📱 **Fully Responsive** — Optimized for desktops, tablets, and mobile screens.
-- ⚡ **Zero Build Step** — Clean vanilla HTML, CSS, and JavaScript using CDN libraries for instant loading and easy hosting.
+I built this site to be fast, interactive, and responsive, with a modern glassmorphic design, smooth animations, and an interactive particle background.
 
 ---
 
-## 📂 Files & Project Structure
+## ✨ Key Features
 
-Here is a breakdown of the files included in this repository:
+- 🌗 **Dual Theme Switcher** — Easily toggle between Ocean (cyan) and Amethyst (purple) themes, saved to your local storage.
+- 🏷️ **Project Category Filters** — Filter my work by category: **All**, **AI & LLMs**, **Computer Vision**, and **Web & 3D Apps**.
+- ✨ **Interactive Animations** — Particle background that interacts with cursor movements, smooth scroll animations, and typing headline effects.
+- 📄 **Interactive Resume Modal** — View my complete resume right on the page, with options to print or download as HTML.
+- 📱 **Fully Responsive** — Works smoothly across mobile phones, tablets, and desktop screens.
+- ⚡ **Zero Build Step** — Built with clean HTML, CSS, and JavaScript using CDN libraries for fast loading and effortless hosting.
+
+---
+
+## 📂 Repository Files & Structure
+
+Here is an overview of the files in my repository and what each one does:
 
 ```
 MyPortfolio/
 ├── index.html                   # Main website file containing all HTML markup, CSS styling, and JavaScript
 ├── google87bb3bc53ec346d2.html  # Google Search Console verification file
 ├── assets/
-│   └── banner.jpg               # Banner image used in the README
+│   └── banner.jpg               # Banner image used in this README
 ├── .github/
 │   ├── ISSUE_TEMPLATE/          # Templates for GitHub bug reports & feature requests
 │   ├── PULL_REQUEST_TEMPLATE.md # Template for pull requests
@@ -51,67 +51,44 @@ MyPortfolio/
 ├── CODE_OF_CONDUCT.md           # Community guidelines and code of conduct
 ├── CONTRIBUTING.md              # Instructions for contributing to the repository
 ├── LICENSE                      # MIT License
-├── README.md                    # Project overview and documentation
-├── SECURITY.md                  # Vulnerability reporting guidelines
-└── vercel.json                  # Hosting and header configuration for Vercel
+├── README.md                    # Documentation about my portfolio website
+├── SECURITY.md                  # Security and vulnerability reporting guidelines
+└── vercel.json                  # Hosting and routing configuration for Vercel
 ```
 
 ---
 
-## 🔗 Featured Projects
+## 🔗 My Featured Projects
+
+Here are the key projects and models featured on my website:
 
 | Project | Description | Link |
 | --- | --- | --- |
-| 🧠 **Teja Priyan AI** | Multimodal AI platform with streaming, live code sandbox, and vision reasoning | [Live Platform](https://tejapriyan-ai.vercel.app/) |
-| ⚡ **Tejapriyan-8B Model** | Fine-tuned 8B language model for verifiable SQL reasoning (Ollama / NPX CLI) | [Live Playground](https://tejapriyan-ai-model.vercel.app/) |
-| 🤗 **Tejapriyan-8B Weights** | GGUF model repository hosted on Hugging Face | [Hugging Face](https://huggingface.co/teja161615/Tejapriyan-8B-GGUF) |
+| 🧠 **Teja Priyan AI** | My multimodal AI platform with streaming, live code sandbox, and vision reasoning | [Live Platform](https://tejapriyan-ai.vercel.app/) |
+| ⚡ **Tejapriyan-8B Model** | My fine-tuned 8B language model for verifiable SQL reasoning (Ollama / NPX CLI) | [Live Playground](https://tejapriyan-ai-model.vercel.app/) |
+| 🤗 **Tejapriyan-8B Weights** | My GGUF model weights hosted on Hugging Face | [Hugging Face](https://huggingface.co/teja161615/Tejapriyan-8B-GGUF) |
 | 🎯 **Helmet Detection** | Deep learning computer vision system detecting helmet compliance | [GitHub](https://github.com/TejaPriyan) |
 | 🚦 **Smart Traffic Monitoring** | Real-time traffic analysis and violation detection with YOLO & IoT | [GitHub](https://github.com/TejaPriyan) |
 | 🏨 **Hotel Booking System** | Full-stack reservation and management web app built with Java Spring Boot | [Live Site](https://veltechhotel.onrender.com/) |
 | 🎮 **Gaming Hub Platform** | Interactive web mini-game platform built with HTML5 Canvas & JS | [Live Site](https://tejagamehub.netlify.app/) |
 | 🧘 **Glass‑Tech Sanctuary** | Minimalist glassmorphic trivia and quiz web experience | [Live Site](https://myself-tejapriyan.onrender.com/) |
-| 🌐 **3D Interactive Portfolio** | Immersive 3D interactive developer portfolio | [Live Site](https://portfoliotejapriyan.vercel.app/) |
+| 🌐 **3D Interactive Portfolio** | My immersive 3D interactive portfolio website | [Live Site](https://portfoliotejapriyan.vercel.app/) |
 
 ---
 
 ## 🛠️ Built With
 
-- **HTML5 & Vanilla JavaScript** — Core page structure, interactivity, and filtering logic
-- **Tailwind CSS & Vanilla CSS** — Layout, custom glassmorphism styles, and CSS variables
+- **HTML5 & Vanilla JavaScript** — Core website structure, theme persistence, and project filtering
+- **Tailwind CSS & Vanilla CSS** — Layout styling, glassmorphism design, and custom theme variables
 - **Libraries (via CDN)**:
-  - [particles.js](https://vincentgarreau.com/particles.js/) for the dynamic background particles
-  - [Typed.js](https://github.com/mattboldt/typed.js/) for role typing animation
-  - [ScrollReveal](https://scrollrevealjs.org/) for scroll entry animations
-  - [Font Awesome](https://fontawesome.com/) for UI icons
+  - [particles.js](https://vincentgarreau.com/particles.js/) — Interactive background particles
+  - [Typed.js](https://github.com/mattboldt/typed.js/) — Animated role headlines
+  - [ScrollReveal](https://scrollrevealjs.org/) — Scroll-triggered animations
+  - [Font Awesome](https://fontawesome.com/) — Clean UI icons
 
 ---
 
-## 🚀 Running Locally
-
-Clone the repository and open `index.html` directly in your browser:
-
-```bash
-# Clone the repo
-git clone https://github.com/TejaPriyan/MyPortfolio.git
-cd MyPortfolio
-
-# Open directly in your browser:
-start index.html       # Windows
-open index.html        # macOS
-xdg-open index.html    # Linux
-```
-
-Or serve with a local static server:
-
-```bash
-npx serve .
-# or
-python -m http.server 8080
-```
-
----
-
-## 📬 Contact & Links
+## 📬 Connect With Me
 
 - 🌐 **Portfolio**: [portfoliotejapriyan.vercel.app](https://portfoliotejapriyan.vercel.app/)
 - 💻 **GitHub**: [@TejaPriyan](https://github.com/TejaPriyan)
