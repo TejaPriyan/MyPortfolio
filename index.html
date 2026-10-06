@@ -844,7 +844,7 @@
 
     <div class="mt-16 flex justify-center gap-8 sm:gap-12 text-center flex-wrap">
       <div>
-        <p class="stat-counter">8+</p>
+        <p class="stat-counter">12+</p>
         <p class="text-gray-400 text-sm">Projects Built</p>
       </div>
       <div>
@@ -998,18 +998,19 @@
       <!-- Frontend & Tools -->
       <div class="glass p-8 border border-cyan-400/20">
         <h3 class="text-xl font-semibold text-cyan-400 mb-6 flex items-center">
-          <i class="fas fa-code mr-3"></i>Frontend &amp; Platform
+          <i class="fas fa-code mr-3"></i>Frontend &amp; Creative Tech
         </h3>
         <div class="flex flex-wrap gap-2">
           <span class="skill-badge">TypeScript</span>
           <span class="skill-badge">JavaScript</span>
-          <span class="skill-badge">Next.js &amp; React</span>
+          <span class="skill-badge">Next.js 15 &amp; React</span>
+          <span class="skill-badge">WebRTC &amp; PWA</span>
+          <span class="skill-badge">Matter.js Physics</span>
+          <span class="skill-badge">Web Audio API</span>
+          <span class="skill-badge">HTML5 Canvas 2D</span>
+          <span class="skill-badge">Three.js &amp; WebGL</span>
           <span class="skill-badge">Tailwind CSS</span>
-          <span class="skill-badge">HTML5/CSS3</span>
-          <span class="skill-badge">NPX CLI</span>
-          <span class="skill-badge">Vercel &amp; Render</span>
-          <span class="skill-badge">WebAssembly</span>
-          <span class="skill-badge">Responsive UI</span>
+          <span class="skill-badge">NPX CLI Tooling</span>
         </div>
       </div>
     </div>
@@ -1044,7 +1045,10 @@
     <!-- Project Category Filter Tabs -->
     <div class="flex justify-center gap-3 mb-10 flex-wrap" id="projectFilters">
       <button onclick="filterProjects('all', this)" class="filter-btn active px-5 py-2 rounded-full font-medium transition text-sm flex items-center gap-1.5">
-        <span>All (8)</span>
+        <span>All (12)</span>
+      </button>
+      <button onclick="filterProjects('web', this)" class="filter-btn px-5 py-2 rounded-full font-medium transition text-sm flex items-center gap-1.5">
+        <i class="fas fa-cube text-cyan-400"></i> Web Applications (8)
       </button>
       <button onclick="filterProjects('ai', this)" class="filter-btn px-5 py-2 rounded-full font-medium transition text-sm flex items-center gap-1.5">
         <i class="fas fa-brain text-cyan-400"></i> AI &amp; LLMs (2)
@@ -1052,16 +1056,86 @@
       <button onclick="filterProjects('cv', this)" class="filter-btn px-5 py-2 rounded-full font-medium transition text-sm flex items-center gap-1.5">
         <i class="fas fa-eye text-cyan-400"></i> Computer Vision (2)
       </button>
-      <button onclick="filterProjects('web', this)" class="filter-btn px-5 py-2 rounded-full font-medium transition text-sm flex items-center gap-1.5">
-        <i class="fas fa-cube text-cyan-400"></i> Web &amp; 3D Apps (4)
-      </button>
     </div>
     
     <div class="grid md:grid-cols-2 gap-8 mb-8" id="projectsGrid">
-      <!-- Flagship Project 1: Teja Priyan AI Platform -->
+      <!-- Flagship 1: Trace -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/10 flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-cyan-400/25 via-blue-500/15 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+                <i class="fas fa-network-wired text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold">Trace</h3>
+            </div>
+            <span class="text-xs bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> Live Intelligence
+            </span>
+          </div>
+          <p class="text-cyan-300 font-medium text-xs mb-2">Website Architecture &amp; Security Engine</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            Recursive website intelligence platform dissecting full-site structure, security posture, DNS headers, tech stacks, and internal networks in real time.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">Next.js 15</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Cheerio</span>
+            <span class="project-tag">Tailwind CSS</span>
+            <span class="project-tag">Security Audit</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap pt-2">
+          <button onclick="window.open('https://tracewebsite.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-cyan-400/30 text-sm">
+            <i class="fas fa-rocket"></i> Launch Trace
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/Trace', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-2 rounded-xl font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Flagship 2: Hopkey -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative border-2 border-purple-400/40 shadow-lg shadow-purple-500/10 flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-purple-500/25 via-pink-500/15 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-purple-400/20 border border-purple-400/40 flex items-center justify-center text-purple-300">
+                <i class="fas fa-wifi text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold">Hopkey</h3>
+            </div>
+            <span class="text-xs bg-purple-400/20 border border-purple-400/50 text-purple-300 px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span> Live P2P Bridge
+            </span>
+          </div>
+          <p class="text-purple-300 font-medium text-xs mb-2">Encrypted Peer-to-Peer Data &amp; Clipboard Bridge</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            Zero-install cross-device AirDrop alternative connecting phones and PCs via WebRTC data channels, animated QR signaling, and end-to-end encryption.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">React</span>
+            <span class="project-tag">WebRTC</span>
+            <span class="project-tag">Vite</span>
+            <span class="project-tag">PWA</span>
+            <span class="project-tag">Encrypted</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap pt-2">
+          <button onclick="window.open('https://hopkey.vercel.app/', '_blank')" class="bg-purple-500 hover:bg-purple-400 text-white px-4 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-purple-500/30 text-sm">
+            <i class="fas fa-rocket"></i> Launch Hopkey
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/Hopkey', '_blank')" class="glass border border-purple-400/40 text-purple-300 px-4 py-2 rounded-xl font-medium hover:bg-purple-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Flagship 3: Teja Priyan AI Platform -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/10 flex flex-col justify-between" data-category="ai">
         <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-cyan-400/25 via-blue-500/15 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
         <div class="relative z-10">
           <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
             <div class="flex items-center gap-2.5">
@@ -1074,13 +1148,10 @@
               <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> Live Platform
             </span>
           </div>
-          
-          <p class="text-cyan-300 font-medium text-xs mb-2">Multimodal AI Workspace</p>
-          
+          <p class="text-cyan-300 font-medium text-xs mb-2">Multimodal AI Workspace &amp; Reasoning</p>
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
             Real-time streaming multimodal AI workspace with &lt;0.4s latency, 4 adaptive depth tiers, native diagram reasoning, and live interactive code &amp; game sandbox.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
             <span class="project-tag">Multimodal AI</span>
             <span class="project-tag">Streaming</span>
@@ -1089,21 +1160,19 @@
             <span class="project-tag">TypeScript</span>
           </div>
         </div>
-        
         <div class="relative z-10 flex gap-3 flex-wrap pt-2">
-          <button onclick="window.open('https://tejapriyan-ai.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-cyan-400/30 text-sm">
+          <button onclick="window.open('https://tejapriyan-ai.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-cyan-400/30 text-sm">
             <i class="fas fa-rocket"></i> Launch Platform
           </button>
-          <button onclick="window.open('https://tejapriyan-ai.vercel.app/#capabilities', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-2 rounded-xl font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-info-circle"></i> Capabilities
+          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-2 rounded-xl font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
           </button>
         </div>
       </div>
 
-      <!-- Flagship Project 2: Tejapriyan-8B Model & Playground -->
+      <!-- Flagship 4: Tejapriyan-8B Model & Playground -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative border-2 border-purple-400/40 shadow-lg shadow-purple-500/10 flex flex-col justify-between" data-category="ai">
         <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-purple-500/25 via-fuchsia-500/15 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
         <div class="relative z-10">
           <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
             <div class="flex items-center gap-2.5">
@@ -1116,13 +1185,10 @@
               <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span> 8B LLM · Open Source
             </span>
           </div>
-          
           <p class="text-purple-300 font-medium text-xs mb-2">Fine-Tuned LLM · Verifiable SQL Reasoning</p>
-          
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
             Fine-tuned 8B parameter model with SFT and GRPO execution rewards (57.7% on Spider benchmark). Runs offline with Ollama, in terminal via <code class="text-cyan-300 bg-cyan-950/60 px-1 rounded">npx tejapriyan</code>, and SQLite Wasm.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
             <span class="project-tag">LLM Fine-Tuning</span>
             <span class="project-tag">GRPO &amp; SFT</span>
@@ -1131,9 +1197,8 @@
             <span class="project-tag">NPX CLI</span>
           </div>
         </div>
-        
         <div class="relative z-10 flex gap-3 flex-wrap pt-2">
-          <button onclick="window.open('https://tejapriyan-ai-model.vercel.app/', '_blank')" class="bg-purple-500 hover:bg-purple-400 text-white px-5 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-purple-500/30 text-sm">
+          <button onclick="window.open('https://tejapriyan-ai-model.vercel.app/', '_blank')" class="bg-purple-500 hover:bg-purple-400 text-white px-4 py-2 rounded-xl font-bold hover:scale-105 transition flex items-center gap-2 shadow-md shadow-purple-500/30 text-sm">
             <i class="fas fa-play"></i> Live Playground
           </button>
           <button onclick="window.open('https://huggingface.co/teja161615/Tejapriyan-8B-GGUF', '_blank')" class="glass border border-purple-400/40 text-purple-300 px-4 py-2 rounded-xl font-medium hover:bg-purple-400/20 transition flex items-center gap-2 text-sm">
@@ -1142,20 +1207,144 @@
         </div>
       </div>
 
-      <!-- Project 3: Helmet Detection System -->
+      <!-- Project 5: MotionLab -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+              <i class="fas fa-atom text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold">MotionLab</h3>
+          </div>
+          <p class="text-cyan-300 font-medium text-xs mb-2">Kinetic Typography &amp; Physics Studio</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            Interactive canvas laboratory powered by Matter.js rigid-body dynamics, procedural audio synthesis, and real-time interactive typography.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Matter.js</span>
+            <span class="project-tag">Web Audio API</span>
+            <span class="project-tag">HTML5 Canvas</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://motionlab1.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fas fa-external-link-alt"></i> Live App
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/MotionLab', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 6: REACT -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-pink-400/20 border border-pink-400/40 flex items-center justify-center text-pink-300">
+              <i class="fas fa-wave-square text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold">REACT</h3>
+          </div>
+          <p class="text-pink-300 font-medium text-xs mb-2">Audio-Reactive DAW &amp; Synthesizer</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            Browser DAW converting microphone audio and music tracks into real-time reactive canvas visualizations and customizable frequency spectrums.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Web Audio API</span>
+            <span class="project-tag">HTML5 Canvas</span>
+            <span class="project-tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://reactsound.vercel.app/', '_blank')" class="bg-pink-500 hover:bg-pink-400 text-white px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fas fa-external-link-alt"></i> Live DAW
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/REACT', '_blank')" class="glass border border-pink-400/40 text-pink-300 px-4 py-1.5 rounded-lg font-medium hover:bg-pink-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 7: Popsel -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300">
+              <i class="fas fa-magic text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold">Popsel</h3>
+          </div>
+          <p class="text-amber-300 font-medium text-xs mb-2">Pixel Reveal Studio &amp; Video Generator</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            In-browser pixel reveal studio transforming images into dynamic particle animations and high-framerate reveal videos directly on client device.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML5 Canvas</span>
+            <span class="project-tag">Video Export</span>
+            <span class="project-tag">CSS3</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://popsel.vercel.app/', '_blank')" class="bg-amber-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fas fa-external-link-alt"></i> Live Studio
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/Popsel', '_blank')" class="glass border border-amber-400/40 text-amber-300 px-4 py-1.5 rounded-lg font-medium hover:bg-amber-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 8: GlitchRoom -->
+      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-green-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-green-400/20 border border-green-400/40 flex items-center justify-center text-green-300">
+              <i class="fas fa-skull text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold">GlitchRoom</h3>
+          </div>
+          <p class="text-green-300 font-medium text-xs mb-2">Interactive Mystery &amp; Escape Maze</p>
+          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+            Atmospheric browser puzzle game where the web interface falls apart into 8 hidden glitch chambers with terminal riddles and 7 unique endings.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML5</span>
+            <span class="project-tag">Web Audio API</span>
+            <span class="project-tag">CSS Glitch</span>
+          </div>
+        </div>
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://glitchroom.vercel.app/', '_blank')" class="bg-green-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fas fa-play"></i> Play Game
+          </button>
+          <button onclick="window.open('https://github.com/TejaPriyan/GlitchRoom', '_blank')" class="glass border border-green-400/40 text-green-300 px-4 py-1.5 rounded-lg font-medium hover:bg-green-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 9: Helmet Detection System -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="cv">
         <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
         <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-helmet-safety text-2xl text-cyan-400"></i>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+              <i class="fas fa-helmet-safety text-xl"></i>
+            </div>
             <h3 class="text-2xl font-semibold">Helmet Detection System</h3>
           </div>
-          
+          <p class="text-cyan-300 font-medium text-xs mb-2">AI &amp; Computer Vision Compliance</p>
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            Real-time AI computer vision system utilizing deep learning CNN models and OpenCV to accurately detect motorcyclists riding without safety helmets.
+            Real-time computer vision system using convolutional deep learning models to identify motorcycle riders without helmets with 95%+ accuracy.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
             <span class="project-tag">Python</span>
             <span class="project-tag">OpenCV</span>
@@ -1163,31 +1352,27 @@
             <span class="project-tag">Computer Vision</span>
           </div>
         </div>
-        
-        <div class="relative z-10 flex gap-3">
+        <div class="relative z-10 flex gap-3 flex-wrap">
           <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fab fa-github"></i> View Code
-          </button>
-          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Details
+            <i class="fab fa-github"></i> View on GitHub
           </button>
         </div>
       </div>
 
-      <!-- Project 4: Smart Traffic Monitoring -->
+      <!-- Project 10: Smart Traffic Monitoring -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="cv">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
+        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
         <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-traffic-light text-2xl text-cyan-400"></i>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-400/20 border border-purple-400/40 flex items-center justify-center text-purple-300">
+              <i class="fas fa-traffic-light text-xl"></i>
+            </div>
             <h3 class="text-2xl font-semibold">Smart Traffic Monitoring</h3>
           </div>
-          
+          <p class="text-purple-300 font-medium text-xs mb-2">IoT &amp; AI Smart City Platform</p>
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            IoT and AI-powered computer vision system using YOLO for real-time traffic density analysis, vehicle tracking, and automated violation detection.
+            Real-time traffic density analysis, congestion forecasting, and violation detection combining YOLO object detection with IoT infrastructure.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
             <span class="project-tag">Python</span>
             <span class="project-tag">IoT</span>
@@ -1195,131 +1380,70 @@
             <span class="project-tag">Real-Time</span>
           </div>
         </div>
-        
-        <div class="relative z-10 flex gap-3">
-          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fab fa-github"></i> View Code
-          </button>
-          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Details
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="bg-purple-500 hover:bg-purple-400 text-white px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> View on GitHub
           </button>
         </div>
       </div>
 
-      <!-- Project 5: Hotel Booking Website -->
+      <!-- Project 11: 3D Interactive Portfolio Website -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
         <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
         <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-hotel text-2xl text-cyan-400"></i>
-            <h3 class="text-2xl font-semibold">Hotel Booking Website</h3>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+              <i class="fas fa-cubes text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold">3D Interactive Portfolio</h3>
           </div>
-          
+          <p class="text-cyan-300 font-medium text-xs mb-2">Immersive Spatial Storytelling</p>
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            Enterprise full-stack hotel management web app featuring live room booking, secure authentication, and administrative controls built with Java Spring Boot.
+            Scroll-driven 3D web experience built with Three.js, React Three Fiber, Next.js, and Framer Motion with real-time particle and lighting physics.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span class="project-tag">Java</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">SQL</span>
-            <span class="project-tag">REST APIs</span>
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">Three.js</span>
+            <span class="project-tag">Framer Motion</span>
+            <span class="project-tag">WebGL</span>
           </div>
         </div>
-        
-        <div class="relative z-10 flex gap-3">
-          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
-            <i class="fab fa-github"></i> Code
+        <div class="relative z-10 flex gap-3 flex-wrap">
+          <button onclick="window.open('https://portfoliotejapriyan.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
+            <i class="fas fa-external-link-alt"></i> Launch 3D Portfolio
           </button>
-          <button onclick="window.open('https://veltechhotel.onrender.com/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Live
+          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
           </button>
         </div>
       </div>
 
-      <!-- Project 6: Gaming Hub Platform -->
+      <!-- Project 12: Gaming Hub Platform -->
       <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
         <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
         <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-gamepad text-2xl text-cyan-400"></i>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+              <i class="fas fa-gamepad text-xl"></i>
+            </div>
             <h3 class="text-2xl font-semibold">Gaming Hub Platform</h3>
           </div>
-          
+          <p class="text-cyan-300 font-medium text-xs mb-2">Interactive Web Arcade</p>
           <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            Interactive web gaming suite with responsive HTML5 Canvas mini-games, dynamic score keeping, and engaging frontend controls.
+            Curated arcade of browser-based mini-games highlighting dynamic physics, keyboard mechanics, and responsive HTML5 Canvas rendering.
           </p>
-          
           <div class="flex flex-wrap gap-1.5 mb-6">
             <span class="project-tag">JavaScript</span>
             <span class="project-tag">HTML5 Canvas</span>
-            <span class="project-tag">Interactive UI</span>
+            <span class="project-tag">Game Design</span>
           </div>
         </div>
-        
-        <div class="relative z-10 flex gap-3">
+        <div class="relative z-10 flex gap-3 flex-wrap">
           <button onclick="window.open('https://tejagamehub.netlify.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Live
+            <i class="fas fa-external-link-alt"></i> Launch Arcade
           </button>
-        </div>
-      </div>
-
-      <!-- Project 7: Glass‑Tech Sanctuary -->
-      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between" data-category="web">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
-        <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-spa text-2xl text-cyan-400"></i>
-            <h3 class="text-2xl font-semibold">Glass‑Tech Sanctuary</h3>
-          </div>
-          
-          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            Serene glassmorphism web platform featuring interactive mind suites, medical trivia games, and clean minimalist engineering.
-          </p>
-          
-          <div class="flex flex-wrap gap-1.5 mb-6">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Glassmorphism</span>
-            <span class="project-tag">Interactive</span>
-          </div>
-        </div>
-        
-        <div class="relative z-10 flex gap-3">
-          <button onclick="window.open('https://myself-tejapriyan.onrender.com/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Live
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 8: 3D Interactive Portfolio Website -->
-      <div class="project-card glass p-8 card-hover group overflow-hidden rounded-2xl relative flex flex-col justify-between md:col-span-2" data-category="web">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
-        
-        <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-3">
-            <i class="fas fa-cubes text-2xl text-cyan-400"></i>
-            <h3 class="text-2xl font-semibold">3D Interactive Portfolio Website</h3>
-            <span class="ml-2 text-xs bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 px-2 py-0.5 rounded-full">Live</span>
-          </div>
-          
-          <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-            Immersive 3D interactive developer portfolio showcasing creative web experiments, 3D graphics, and smooth modern web interactions.
-          </p>
-          
-          <div class="flex flex-wrap gap-1.5 mb-6">
-            <span class="project-tag">3D Web</span>
-            <span class="project-tag">HTML/CSS</span>
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Vercel</span>
-          </div>
-        </div>
-        
-        <div class="relative z-10 flex gap-3">
-          <button onclick="window.open('https://portfoliotejapriyan.vercel.app/', '_blank')" class="bg-cyan-400 text-black px-4 py-1.5 rounded-lg font-semibold hover:scale-105 transition flex items-center gap-2 text-sm">
-            <i class="fas fa-external-link-alt"></i> Launch 3D Portfolio
+          <button onclick="window.open('https://github.com/TejaPriyan', '_blank')" class="glass border border-cyan-400/40 text-cyan-300 px-4 py-1.5 rounded-lg font-medium hover:bg-cyan-400/20 transition flex items-center gap-2 text-sm">
+            <i class="fab fa-github"></i> GitHub Code
           </button>
         </div>
       </div>
@@ -1334,6 +1458,10 @@
     </p>
 
     <div class="flex justify-center gap-4 flex-wrap mb-12">
+      <a href="https://github.com/TejaPriyan" target="_blank" rel="noopener noreferrer" class="glass px-6 py-3 rounded-xl hover:scale-105 transition inline-flex items-center gap-3 card-hover border border-white/20">
+        <i class="fab fa-github text-xl text-white"></i>
+        <span>GitHub</span>
+      </a>
       <a href="mailto:tejapriyan@example.com" target="_blank" class="glass px-6 py-3 rounded-xl hover:scale-105 transition inline-flex items-center gap-3 card-hover">
         <i class="fas fa-envelope text-xl text-cyan-400"></i>
         <span>Email</span>
@@ -1371,7 +1499,7 @@
             <div class="resume-title">AI Engineer &amp; Full Stack Developer | LLM &amp; Vision Specialist</div>
             <div class="resume-contact">
               📧 tejapriyan@email.com | 📱 +91-XXXX-XXXX-XX | 
-              
+              <a href="https://github.com/TejaPriyan" target="_blank">GitHub</a> | 
               <a href="https://www.linkedin.com/in/tejapriyan" target="_blank">LinkedIn</a> | 
               <a href="https://huggingface.co/teja161615" target="_blank">Hugging Face</a>
             </div>
@@ -1440,30 +1568,72 @@
             <div class="resume-section-title">FEATURED PROJECTS</div>
             
             <div class="resume-item">
+              <div class="resume-item-title">🌐 Trace — Recursive Website Intelligence Engine</div>
+              <div class="resume-item-description">
+                Recursive website intelligence platform dissecting full-site architecture, security posture, headers, and dependency graphs in real time. (Next.js 15, TypeScript, Cheerio)
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-title">📡 Hopkey — Cross-Platform Encrypted P2P Data Bridge</div>
+              <div class="resume-item-description">
+                Zero-install cross-device AirDrop alternative connecting devices via WebRTC data channels, animated QR signaling, and end-to-end encryption. (React, WebRTC, Vite, PWA)
+              </div>
+            </div>
+
+            <div class="resume-item">
               <div class="resume-item-title">🧠 Teja Priyan AI — Multimodal Intelligence Workspace</div>
               <div class="resume-item-description">
-                Full-featured AI platform with real-time streaming, diagram &amp; whiteboard image reasoning, 4 cognitive depth tiers (Fast, Think, Max, Ultra), live code preview sandbox, and private local database session storage.
+                Full-featured AI platform with real-time streaming, diagram reasoning, 4 cognitive depth tiers, live code sandbox, and private session storage.
               </div>
             </div>
 
             <div class="resume-item">
               <div class="resume-item-title">⚡ Tejapriyan-8B — Open-Source AI Model &amp; SQL Playground</div>
               <div class="resume-item-description">
-                Fine-tuned 8-billion parameter LLM with GRPO execution rewards for text-to-SQL reasoning. Published on Hugging Face with local Ollama support, browser SQLite Wasm runner, and instant NPX CLI chat.
+                Fine-tuned 8-billion parameter LLM with GRPO execution rewards for text-to-SQL reasoning. Published on Hugging Face with local Ollama support and instant NPX CLI.
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-title">⚛️ REACT — Audio-Reactive DAW &amp; Synthesizer</div>
+              <div class="resume-item-description">
+                In-browser digital audio workstation translating live mic signals and audio files into reactive canvas visualizations. (React, Web Audio API, Canvas)
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-title">🎮 MotionLab — Kinetic Typography &amp; Physics Studio</div>
+              <div class="resume-item-description">
+                Interactive laboratory powered by Matter.js rigid-body collision dynamics, procedural audio synthesis, and interactive kinetic text.
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-title">✨ Popsel — Pixel Reveal Animation Studio</div>
+              <div class="resume-item-description">
+                Client-side pixel particle animation studio generating high-framerate reveal videos directly in browser. (JavaScript, Canvas, Video Export)
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-title">🕹️ GlitchRoom — Interactive Horror-Puzzle Experience</div>
+              <div class="resume-item-description">
+                Atmospheric browser escape game where the web interface falls apart into 8 hidden glitch chambers with terminal riddles and 7 unique endings.
               </div>
             </div>
 
             <div class="resume-item">
               <div class="resume-item-title">🎯 Helmet Detection System</div>
               <div class="resume-item-description">
-                Real-time computer vision system using CNN models, Python, and OpenCV to detect motorcycle riders without helmets with 95%+ accuracy for safety compliance.
+                Real-time computer vision system using CNN models, Python, and OpenCV to detect motorcycle riders without helmets with 95%+ accuracy.
               </div>
             </div>
 
             <div class="resume-item">
               <div class="resume-item-title">🚦 Smart Traffic Monitoring Platform</div>
               <div class="resume-item-description">
-                IoT-enabled traffic management system combining computer vision with sensor data for real-time violation detection and smart city infrastructure management.
+                IoT-enabled traffic management system combining computer vision with YOLO sensors for real-time violation detection.
               </div>
             </div>
           </div>
