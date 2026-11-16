@@ -243,7 +243,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -807,9 +807,22 @@
         <div class="toggle-knob" id="toggleKnobMobile">🌊</div>
         <span class="toggle-label">✦</span>
       </button>
-      <button class="text-cyan-400"><i class="fas fa-bars text-2xl"></i></button>
+      <button id="mobileMenuBtn" type="button" onclick="toggleMobileMenu()" class="text-cyan-400 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavMenu">
+        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+      </button>
     </div>
   </nav>
+  <div id="mobileNavMenu" class="hidden md:hidden fixed top-20 left-4 right-4 z-40 glass rounded-2xl p-5 flex-col gap-3 border border-cyan-400/20 shadow-2xl">
+    <a href="#about" onclick="closeMobileMenu()" class="nav-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-cyan-300 transition">About</a>
+    <a href="#experience" onclick="closeMobileMenu()" class="nav-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-cyan-300 transition">Experience</a>
+    <a href="#skills" onclick="closeMobileMenu()" class="nav-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-cyan-300 transition">Skills</a>
+    <a href="#projects" onclick="closeMobileMenu()" class="nav-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-cyan-300 transition">Projects</a>
+    <a href="#contact" onclick="closeMobileMenu()" class="nav-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-cyan-300 transition">Contact</a>
+    <a href="https://www.buymeacoffee.com/TejaPriyan" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" class="mt-1 px-3.5 py-2 rounded-full glass border border-amber-400/40 text-amber-300 hover:text-white hover:bg-amber-500/20 text-xs font-mono transition inline-flex items-center justify-center gap-1.5">
+      <span>🍕</span>
+      <span>Buy me a pizza</span>
+    </a>
+  </div>
 
   <!-- HERO -->
   <section class="content-section text-center min-h-screen flex flex-col justify-center px-6 relative">
@@ -1498,10 +1511,10 @@
             <div class="resume-name">TEJA PRIYAN SIVARAJ</div>
             <div class="resume-title">AI Engineer &amp; Full Stack Developer | LLM &amp; Vision Specialist</div>
             <div class="resume-contact">
-              📧 tejapriyan@email.com | 📱 +91-XXXX-XXXX-XX | 
-              <a href="https://github.com/TejaPriyan" target="_blank">GitHub</a> | 
-              <a href="https://www.linkedin.com/in/tejapriyan" target="_blank">LinkedIn</a> | 
-              <a href="https://huggingface.co/teja161615" target="_blank">Hugging Face</a>
+              📧 teja1616150@gmail.com | 
+              <a href="https://github.com/TejaPriyan" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+              <a href="https://www.linkedin.com/in/tejapriyan" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+              <a href="https://huggingface.co/teja161615" target="_blank" rel="noopener noreferrer">Hugging Face</a>
             </div>
           </div>
 
@@ -1897,8 +1910,15 @@
 
     // Print Resume Function
     function printResume() {
-      const resumeContent = document.getElementById('htmlResume').innerHTML;
-      const printWindow = window.open('', '', 'width=900,height=600');
+      const resumeEl = document.getElementById('htmlResume');
+      if (!resumeEl) return;
+      const resumeContent = resumeEl.innerHTML;
+      const printWindow = window.open('', '_blank', 'width=900,height=600');
+      if (!printWindow) {
+        alert('Popup blocked by your browser. Please allow popups or use Download Resume.');
+        return;
+      }
+      printWindow.document.open();
       printWindow.document.write(`
         <!DOCTYPE html>
         <html>
@@ -1937,7 +1957,34 @@
       printWindow.document.close();
     }
 
+    // Mobile Navigation Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (!menu || !btn) return;
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (!menu || !btn) return;
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
     // Project category filter
+    const cardFilterTimers = new WeakMap();
     function filterProjects(category, button) {
       if (button) {
         document.querySelectorAll('#projectFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -1945,22 +1992,31 @@
       }
       const cards = document.querySelectorAll('#projectsGrid .project-card');
       cards.forEach(card => {
+        const pendingTimer = cardFilterTimers.get(card);
+        if (pendingTimer) {
+          clearTimeout(pendingTimer);
+          cardFilterTimers.delete(card);
+        }
         const cat = card.getAttribute('data-category');
         const matches = (category === 'all' || cat === category);
         if (matches) {
           card.style.display = 'flex';
           card.style.opacity = '0';
           card.style.transform = 'scale(0.96)';
-          setTimeout(() => {
+          const showTimer = setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
+            cardFilterTimers.delete(card);
           }, 30);
+          cardFilterTimers.set(card, showTimer);
         } else {
           card.style.opacity = '0';
           card.style.transform = 'scale(0.96)';
-          setTimeout(() => {
+          const hideTimer = setTimeout(() => {
             card.style.display = 'none';
+            cardFilterTimers.delete(card);
           }, 180);
+          cardFilterTimers.set(card, hideTimer);
         }
       });
     }
@@ -1968,9 +2024,12 @@
     // Smooth scroll behavior for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
         if (target) {
+          e.preventDefault();
+          closeMobileMenu();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
@@ -1978,14 +2037,15 @@
 
     // Add hero observer for animation
     const heroSection = document.querySelector('section:first-of-type');
-    if (heroSection) {
+    if (heroSection && typeof observer !== 'undefined') {
       observer.observe(heroSection);
     }
 
-    // Close modal on Escape key
+    // Close modal & mobile menu on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeResumeModal();
+        closeMobileMenu();
       }
     });
   </script>

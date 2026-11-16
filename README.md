@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://portfoliotejapriyan.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Live_Demo-portfoliotejapriyan.vercel.app-22d3ee?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"></a>
   <a href="https://huggingface.co/teja161615/Tejapriyan-8B-GGUF" target="_blank"><img src="https://img.shields.io/badge/Hugging_Face-Tejapriyan--8B-yellow?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-a855f7?style=for-the-badge" alt="License: MIT"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Proprietary-a855f7?style=for-the-badge" alt="License: Proprietary"></a>
 </p>
 
 ---
@@ -51,7 +51,7 @@ MyPortfolio/
 ├── .htmlvalidate.json           # HTML validator configuration
 ├── CODE_OF_CONDUCT.md           # Community guidelines and code of conduct
 ├── CONTRIBUTING.md              # Instructions for contributing to the repository
-├── LICENSE                      # MIT License
+├── LICENSE                      # Proprietary License (All Rights Reserved)
 ├── README.md                    # Documentation about my portfolio website
 ├── SECURITY.md                  # Security and vulnerability reporting guidelines
 └── vercel.json                  # Hosting and routing configuration for Vercel
